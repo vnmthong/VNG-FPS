@@ -9,6 +9,8 @@ namespace VNGFPS
     public class GameRunner : AppRunner<GameApp>
     {
         private GameApp myGame;
+        public TextAsset levelCfg;
+        public TextAsset troopCfg;
         public TextAsset constCfg;
         protected override GameApp CreateApp()
         {
