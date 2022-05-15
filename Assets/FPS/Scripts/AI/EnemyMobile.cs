@@ -145,7 +145,7 @@ namespace Unity.FPS.AI
 
             for (int i = 0; i < OnDetectVfx.Length; i++)
             {
-                OnDetectVfx[i].Play();
+                OnDetectVfx[i]?.Play();
             }
 
             if (OnDetectSfx)
@@ -165,7 +165,7 @@ namespace Unity.FPS.AI
 
             for (int i = 0; i < OnDetectVfx.Length; i++)
             {
-                OnDetectVfx[i].Stop();
+                OnDetectVfx[i]?.Stop();
             }
 
             Animator.SetBool(k_AnimAlertedParameter, false);
