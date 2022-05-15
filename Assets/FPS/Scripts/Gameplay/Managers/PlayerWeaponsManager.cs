@@ -22,6 +22,9 @@ namespace Unity.FPS.Gameplay
         [Header("References")] [Tooltip("Secondary camera used to avoid seeing weapon go throw geometries")]
         public Camera WeaponCamera;
 
+        [Tooltip("Need to animation for aim")]
+        public bool IsWeaponParentAnimation = true;
+
         [Tooltip("Parent transform where all weapon will be added in the hierarchy")]
         public Transform WeaponParentSocket;
 
@@ -195,7 +198,8 @@ namespace Unity.FPS.Gameplay
         {
             UpdateWeaponAiming();
             UpdateWeaponBob();
-            UpdateWeaponRecoil();
+            if (IsWeaponParentAnimation)
+                UpdateWeaponRecoil();
             UpdateWeaponSwitching();
 
             // Set final weapon socket position based on all the combined animation influences

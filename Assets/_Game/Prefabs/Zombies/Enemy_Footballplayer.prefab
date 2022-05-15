@@ -220,7 +220,7 @@ NavMeshAgent:
   m_Speed: 11
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 1000
   m_StoppingDistance: 0.2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -776,6 +776,7 @@ MonoBehaviour:
   RecoilForce: 1
   AimZoomRatio: 1
   AimOffset: {x: 0, y: 0, z: 0}
+  ShootWhileReload: 1
   AutomaticReload: 1
   HasPhysicalBullets: 0
   ClipSize: 30
