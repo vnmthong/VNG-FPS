@@ -15,6 +15,7 @@ namespace Unity.FPS.Game
         static readonly Dictionary<Delegate, Action<GameEvent>> s_EventLookups =
             new Dictionary<Delegate, Action<GameEvent>>();
 
+        public static int s_Score = 0;
         public static void AddListener<T>(Action<T> evt) where T : GameEvent
         {
             if (!s_EventLookups.ContainsKey(evt))

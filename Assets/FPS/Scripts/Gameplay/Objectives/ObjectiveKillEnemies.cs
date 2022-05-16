@@ -21,7 +21,7 @@ namespace Unity.FPS.Gameplay
             base.Start();
 
             EventManager.AddListener<EnemyKillEvent>(OnEnemyKilled);
-
+            EventManager.AddListener<EnemyKillEvent>(OnIncreaseScore);
             // set a title and description specific for this type of objective, if it hasn't one
             if (string.IsNullOrEmpty(Title))
                 Title = "Eliminate " + (MustKillAllEnemies ? "all the" : KillsToCompleteObjective.ToString()) +
@@ -29,6 +29,11 @@ namespace Unity.FPS.Gameplay
 
             if (string.IsNullOrEmpty(Description))
                 Description = GetUpdatedCounterAmount();
+        }
+
+        void OnIncreaseScore(EnemyKillEvent evt)
+        {
+            EventManager.s_Score += 10;
         }
 
         void OnEnemyKilled(EnemyKillEvent evt)
@@ -74,6 +79,7 @@ namespace Unity.FPS.Gameplay
         void OnDestroy()
         {
             EventManager.RemoveListener<EnemyKillEvent>(OnEnemyKilled);
+            EventManager.RemoveListener<EnemyKillEvent>(OnIncreaseScore);
         }
     }
 }

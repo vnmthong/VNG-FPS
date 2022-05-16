@@ -75,18 +75,18 @@ namespace Unity.FPS.UI
                 Cursor.visible = true;
             }
 
-            if (Input.GetButtonDown(GameConstants.k_ButtonNamePauseMenu)
-                || (MenuRoot.activeSelf && Input.GetButtonDown(GameConstants.k_ButtonNameCancel)))
-            {
-                if (ControlImage.activeSelf)
-                {
-                    ControlImage.SetActive(false);
-                    return;
-                }
+            //if (Input.GetButtonDown(GameConstants.k_ButtonNamePauseMenu)
+            //    || (MenuRoot.activeSelf && Input.GetButtonDown(GameConstants.k_ButtonNameCancel)))
+            //{
+            //    if (ControlImage.activeSelf)
+            //    {
+            //        ControlImage.SetActive(false);
+            //        return;
+            //    }
 
-                SetPauseMenuActivation(!MenuRoot.activeSelf);
+            //    SetPauseMenuActivation(!MenuRoot.activeSelf);
 
-            }
+            //}
 
             if (Input.GetAxisRaw(GameConstants.k_AxisNameVertical) != 0)
             {

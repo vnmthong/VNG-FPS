@@ -37,6 +37,7 @@ namespace Unity.FPS.Game
         {
             EventManager.AddListener<AllObjectivesCompletedEvent>(OnAllObjectivesCompleted);
             EventManager.AddListener<PlayerDeathEvent>(OnPlayerDeath);
+            EventManager.s_Score = 0;
         }
 
         void Start()
